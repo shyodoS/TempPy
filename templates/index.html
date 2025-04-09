@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempPy - Quiz com Termômetro Interativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <h1>TempPy - Quiz Interativo</h1>
+        
+        <div class="thermometer-container">
+            <h2>Termômetro de Conhecimento</h2>
+            <div class="thermometer">
+                <div class="temperature-fill"></div>
+            </div>
+            <div class="temperature-value">0°C</div>
+        </div>
+        
+        <div class="counters">
+            <div class="counter">
+                <div class="counter-label">Tentativas</div>
+                <div class="counter-value attempts-value">0/5</div>
+            </div>
+            <div class="counter">
+                <div class="counter-label">Respostas Corretas</div>
+                <div class="counter-value correct-value">0</div>
+            </div>
+        </div>
+        
+        <div class="quiz-container">
+            <h3>Responda Corretamente!</h3>
+            <div class="question"></div>
+            
+            <div class="feedback"></div>
+            
+            <div class="answer-form">
+                <input type="text" id="answer-input" placeholder="Digite sua resposta aqui...">
+                <button id="submit-answer" class="animate__animated animate__pulse animate__infinite">Responder</button>
+            </div>
+        </div>
+        
+        <div class="result-container">
+            <div class="win-container animate__animated animate__bounceIn">
+                <div class="trophy">🏆</div>
+                <h2>Parabéns!</h2>
+                <p>Você conseguiu responder corretamente e ganhou um prêmio físico!</p>
+                <button id="claim-prize" class="animate__animated animate__pulse animate__infinite">Reivindicar Prêmio</button>
+            </div>
+            
+            <div class="lose-container animate__animated animate__fadeIn">
+                <div class="ebook-icon">📚</div>
+                <h2>Quase lá!</h2>
+                <p>Embora você não tenha alcançado o número necessário de acertos, 
+                   preparamos um ebook especial para você continuar estudando!</p>
+                <button id="download-ebook">Baixar E-book</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
